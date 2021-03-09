@@ -1,7 +1,7 @@
 # GA-DSI12-Capstone
 
 Hello! This repository stores the materials for my capstone project done during my DSI12+ course at General Assembly. I had created an Attrition Prediction Model based on fictional IBM data on Kaggle. 
-The key product for this project is a web app made using Flask targeted for supervisors to check the probability of their staff resigning. 
+The key product for this project is a web app, made using Flask, targeted for supervisors to check the probability of their staff resigning. 
 
 ## How to view my work
 1. Download the files in this repository. 
