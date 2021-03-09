@@ -1,0 +1,43 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+    <center> <h1><b><font color="black" face="Tw Cen MT">Attrition Calculator</b></h1></center>
+    <div style="position: absolute; width: 600px; height: 200px; z-index: 15; top: 37%; left: 40%; margin: -100px 0 0 -150px;">
+    <p>Hi Managers. Have a staff who seems disengaged compared to usual?</p>
+    <p>This calculator is created using past data to help you predict attrition and highlight key drivers of attrition for early intervention.</p>
+    <p>It is <b>important</b> to note that the prediction is only <b>~78% accurate</b> and please use the information <b>objectively and confidentially.</b> </p>     
+    
+        <form action="" method="POST">
+            <input id="EmployeeNumber" name="EmployeeNumber" class="form-control" aria-describedby="" placeholder="Enter Employee Number">
+            <br>
+            <center><input id="modalBtn" class="btn btn-primary" type="submit" value="Predict" /></center>
+        </form>
+        </font>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    
+   <center> <div style= "position: absolute; width: 600px; height: 200px; z-index: 15; top: 70%; left: 40%; margin: -100px 0 0 -150px;"; "font-size:18px;">
+        {% if resign > 50 %}
+            <img height="50" width="50" src="https://www.cutoday.info/var/ezdemo_site/storage/images/media/images/venmo-sad-face/962689-1-eng-US/Venmo-Sad-Face_large.png">
+            <p></p>
+            <font face="Tw Cen MT">  Probability of <font color="red"><b>resignation</b></font> for Employee {{emp_num}}:<b> {{resign}}%</b></font> 
+        {% elif resign == 0 and notresign == 0 %}
+            <font color="black" face="Tw Cen MT">Please key in another EmployeeNumber.</font>
+         {% else %}
+            <img height="50" width="50" src="https://www.toocool2betrue.com/content/142065/42acd89036fa069d7fdff41086abc609.jpg">
+            <p></p>
+            <font face="Tw Cen MT">  Probability of <font color="green"><b>staying</font></b> for Employee {{emp_num}}: {{notresign}}%</font>
+        {% endif %}
+    </div></center>
+<font face="Tw Cen MT">
+<center> <div style= "position: absolute; width: 400px; height: 200px; z-index: 15; top:85%; left: 45%; margin: -100px 0 0 -150px;"; "font-size:18px;">
+<b><font color="black"><u>Details for Employee {{emp_num}}</u></b><br>
+{{df_html | safe}}
+<font color="grey" size="small"><i>Note: 4 is the best involvement / satisfaction score.<br></i>
+</font>
+
+    </div></center>
+
+{% endblock %}
